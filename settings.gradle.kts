@@ -20,5 +20,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "TPlayer"
-include(":app")
+include(":tplayer")
  
