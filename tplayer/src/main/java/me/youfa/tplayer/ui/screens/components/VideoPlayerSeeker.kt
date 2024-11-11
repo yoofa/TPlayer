@@ -26,9 +26,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
-import kotlin.time.Duration
 import me.youfa.tplayer.data.utils.StringConstants
-
+import kotlin.time.Duration
 
 
 @Composable

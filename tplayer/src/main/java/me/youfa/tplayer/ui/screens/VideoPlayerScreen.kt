@@ -25,12 +25,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
-import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.datasource.DefaultDataSource
+import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.ProgressiveMediaSource
 import androidx.media3.ui.PlayerView
+import kotlinx.coroutines.delay
 import me.youfa.tplayer.data.entities.MovieDetails
 import me.youfa.tplayer.data.utils.StringConstants
 import me.youfa.tplayer.ui.screens.components.VideoPlayerControlsIcon
@@ -46,7 +47,6 @@ import me.youfa.tplayer.ui.screens.components.rememberVideoPlayerPulseState
 import me.youfa.tplayer.ui.screens.components.rememberVideoPlayerState
 import me.youfa.tplayer.ui.utils.handleDPadKeyEvents
 import me.youfa.tplayer.utils.Logging
-import kotlinx.coroutines.delay
 import kotlin.time.Duration.Companion.milliseconds
 
 @Composable
@@ -78,7 +78,10 @@ fun VideoPlayerScreen(movieDetails: MovieDetails, onBackPressed: () -> Unit) {
 
     BackHandler(onBack = onBackPressed)
 
-    Box(Modifier.dPadEvents(exoPlayer, videoPlayerState, pulseState).focusable()) {
+    Box(
+        Modifier
+            .dPadEvents(exoPlayer, videoPlayerState, pulseState)
+            .focusable()) {
         AndroidView(
             factory = {
                 PlayerView(context).apply { useController = false }
@@ -222,10 +225,12 @@ private fun Modifier.dPadEvents(
     },
     onUp = {
         Logging.log("VideoPlayerScreen", "onUp")
-        videoPlayerState.showControls() },
+        videoPlayerState.showControls()
+    },
     onDown = {
         Logging.log("VideoPlayerScreen", "onDown")
-        videoPlayerState.showControls() },
+        videoPlayerState.showControls()
+    },
     onEnter = {
         Logging.log("VideoPlayerScreen", "onEnter")
         player.pause()

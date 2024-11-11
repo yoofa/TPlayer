@@ -2,13 +2,14 @@ package me.youfa.tplayer.utils
 
 // use android Log class for logging
 import android.util.Log
+
 class Logging {
 
 
     companion object {
         private const val TAG = "me.youfa.Logging"
         fun log(message: String) {
-            Log.d(TAG,  message)
+            Log.d(TAG, message)
         }
 
         // log a message with a tag
