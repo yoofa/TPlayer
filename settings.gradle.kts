@@ -21,4 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "TPlayer"
 include(":tplayer")
- 
+
+include(":core:common")
+//include(":core:database")
