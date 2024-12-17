@@ -35,8 +35,6 @@ import androidx.tv.material3.LocalContentColor
 import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Surface
 
-import me.youfa.tplayer.ui.screens.components.VideoPlayerState
-
 @Composable
 fun VideoPlayerControlsIcon(
     modifier: Modifier = Modifier,
