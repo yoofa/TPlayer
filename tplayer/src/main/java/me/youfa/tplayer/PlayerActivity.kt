@@ -3,13 +3,16 @@ package me.youfa.tplayer
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
-import me.youfa.tplayer.ui.screens.VideoPlayerScreen
+import androidx.tv.material3.LocalContentColor
+import androidx.tv.material3.MaterialTheme
 import me.youfa.tplayer.data.entities.MovieDetails
-
-import me.youfa.tplayer.ui.theme.TPlayerTheme
+import me.youfa.tplayer.ui.screens.VideoPlayerScreen
+import me.youfa.tplayer.ui.theme.PlayerViewTheme
 import me.youfa.tplayer.utils.Logging
 
 class PlayerActivity : ComponentActivity() {
@@ -20,11 +23,15 @@ class PlayerActivity : ComponentActivity() {
         Logging.log("videoUri: $videoUri")
         val movieDetails = createMovieDetails(videoUri.toString())
         setContent {
-            TPlayerTheme {
-                    Box(
-                    modifier = Modifier.fillMaxSize(),
+            PlayerViewTheme {
+                Box(
+                    Modifier
+                        .fillMaxSize()
+                        .background(MaterialTheme.colorScheme.surface),
                 ) {
-                    VideoPlayerScreen(movieDetails, onBackPressed = { finish() })
+                    CompositionLocalProvider(LocalContentColor provides MaterialTheme.colorScheme.onSurface) {
+                        VideoPlayerScreen(movieDetails, onBackPressed = { finish() })
+                    }
                 }
             }
         }

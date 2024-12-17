@@ -40,7 +40,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import me.youfa.tplayer.ui.theme.TPlayerTheme
+import me.youfa.tplayer.ui.theme.PlayerViewTheme
 
 /**
  * Handles the visibility and animation of the controls.
@@ -121,7 +121,7 @@ fun CinematicBackground(modifier: Modifier = Modifier) {
 @Preview(device = "id:tv_4k")
 @Composable
 private fun VideoPlayerOverlayPreview() {
-    TPlayerTheme {
+    PlayerViewTheme {
         Box(Modifier.fillMaxSize()) {
             VideoPlayerOverlay(
                 modifier = Modifier.align(Alignment.BottomCenter),

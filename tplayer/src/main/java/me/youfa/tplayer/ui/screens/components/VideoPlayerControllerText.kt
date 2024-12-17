@@ -23,15 +23,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.tv.material3.Text
 
-import me.youfa.tplayer.ui.theme.TPlayerTheme
+import me.youfa.tplayer.ui.theme.PlayerViewTheme
 
 @Composable
 fun VideoPlayerControllerText(text: String) {
-    TPlayerTheme {
+    PlayerViewTheme {
         Text(
-        modifier = Modifier.padding(horizontal = 12.dp),
-        text = text,
-        fontWeight = FontWeight.SemiBold
-    ) }
+            modifier = Modifier.padding(horizontal = 12.dp),
+            text = text,
+            fontWeight = FontWeight.SemiBold
+        )
+    }
 
 }

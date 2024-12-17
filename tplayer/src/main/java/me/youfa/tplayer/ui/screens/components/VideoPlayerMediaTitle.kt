@@ -36,7 +36,7 @@ import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Surface
 import androidx.tv.material3.Text
 import me.youfa.tplayer.R
-import me.youfa.tplayer.ui.theme.TPlayerTheme
+import me.youfa.tplayer.ui.theme.PlayerViewTheme
 
 enum class VideoPlayerMediaTitleType { AD, LIVE, DEFAULT }
 
@@ -101,7 +101,7 @@ fun VideoPlayerMediaTitle(
 @Preview(name = "TV Series", device = "id:tv_4k")
 @Composable
 private fun VideoPlayerMediaTitlePreviewSeries() {
-    TPlayerTheme {
+    PlayerViewTheme {
         Surface(shape = RectangleShape) {
             VideoPlayerMediaTitle(
                 title = "True Detective",
@@ -116,7 +116,7 @@ private fun VideoPlayerMediaTitlePreviewSeries() {
 @Preview(name = "Live", device = "id:tv_4k")
 @Composable
 private fun VideoPlayerMediaTitlePreviewLive() {
-    TPlayerTheme {
+    PlayerViewTheme {
         Surface(shape = RectangleShape) {
             VideoPlayerMediaTitle(
                 title = "MacLaren Reveal Their 2022 Car: The MCL36",
@@ -131,7 +131,7 @@ private fun VideoPlayerMediaTitlePreviewLive() {
 @Preview(name = "Ads", device = "id:tv_4k")
 @Composable
 private fun VideoPlayerMediaTitlePreviewAd() {
-    TPlayerTheme {
+    PlayerViewTheme {
         Surface(shape = RectangleShape) {
             VideoPlayerMediaTitle(
                 title = "Samsung Galaxy Note20 | Ultra 5G",
