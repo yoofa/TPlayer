@@ -16,6 +16,7 @@
 
 package me.youfa.tplayer.ui.screens.components
 
+import androidx.compose.foundation.focusGroup
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Pause
@@ -25,8 +26,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
-import me.youfa.tplayer.data.utils.StringConstants
 import kotlin.time.Duration
+import me.youfa.tplayer.data.utils.StringConstants
+
 
 
 @Composable
@@ -57,6 +59,7 @@ fun VideoPlayerSeeker(
         }
 
     Row(
+        modifier = Modifier.focusGroup(),
         verticalAlignment = Alignment.CenterVertically
     ) {
         VideoPlayerControlsIcon(
